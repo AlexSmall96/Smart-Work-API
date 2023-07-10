@@ -8,6 +8,8 @@ class Profile(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     name = models.CharField(max_length=255, blank=True)
+    organisation = models.CharField(max_length=255, blank=True)
+    role = models.CharField(max_length=255, blank=True)
     skills = models.TextField(blank=True)
     interests = models.TextField(blank=True)
     image = models.ImageField(

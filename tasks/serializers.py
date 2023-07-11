@@ -17,7 +17,7 @@ class TaskSerializer(serializers.ModelSerializer):
         return request.user == obj.owner
 
     class Meta:
-        model = Comment
+        model = Task
         fields = [
             'id', 'owner', 'is_owner', 'profile_id', 'profile_image',
             'project', 'start_date', 'due_date', 'description',

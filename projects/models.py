@@ -7,8 +7,8 @@ class Project(models.Model):
     Project model, related to 'owner', i.e. a User instance.
     """
     owner = models.ForeignKey(User, on_delete=models.CASCADE)
-    start_date = models.DateTimeField(auto_now_add=True)
-    due_date = models.DateTimeField(auto_now=True)
+    start_date = models.DateTimeField()
+    due_date = models.DateTimeField()
     title = models.CharField(max_length=255)
     description = models.TextField(blank=True)
     complexity = models.CharField(

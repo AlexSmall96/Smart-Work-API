@@ -58,7 +58,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = 'DEV' in os.environ
 
-ALLOWED_HOSTS = ['8000-alexsmall96-smartworkap-ac40o5ot1ef.ws-eu101.gitpod.io','smart-work-api.herokuapp.com']
+ALLOWED_HOSTS = ['8000-alexsmall96-smartworkap-ac40o5ot1ef.ws-eu101.gitpod.io','smart-work-api-5663b698ef05.herokuapp.com']
 
 # Application definition
 

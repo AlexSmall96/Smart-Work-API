@@ -8,6 +8,7 @@ class MemberSerializer(serializers.ModelSerializer):
     Create method handles the unique constraint on 'owner' and 'followed'
     """
     member_name = serializers.ReadOnlyField(source='profile.name')
+    member_username = serializers.ReadOnlyField(source='profile.owner.username')
     title = serializers.ReadOnlyField(source='project.title')
     start_date = serializers.ReadOnlyField(source='project.start_date')
     due_date = serializers.ReadOnlyField(source='project.due_date')

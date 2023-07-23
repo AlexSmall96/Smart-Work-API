@@ -2,6 +2,7 @@ from rest_framework import generics, permissions
 from smart_work_api.permissions import IsOwnerOrReadOnly
 from .models import Project
 from .serializers import ProjectSerializer
+from members.models import Member
 
 
 class ProjectList(generics.ListCreateAPIView):

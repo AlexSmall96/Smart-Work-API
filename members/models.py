@@ -18,3 +18,4 @@ class Member(models.Model):
 
     def __str__(self):
         return f'{self.profile.name} {self.project}'
+

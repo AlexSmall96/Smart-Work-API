@@ -1,5 +1,5 @@
 from rest_framework import generics, permissions, filters
-from smart_work_api.permissions import IsOwnerOrReadOnly
+from smart_work_api.permissions import IsOwnerOrReadOnly, IsOwnerOrReadOnlyMember
 from .models import Member
 from projects.models import Project
 from profiles.models import Profile
@@ -35,3 +35,12 @@ class MemberList(generics.ListCreateAPIView):
         
     post_save.connect(receiver=create_member, sender=Project)
 
+
+class MemberDetail(generics.RetrieveDestroyAPIView):
+    """
+    Retrieve a Member
+    Destroy a member, i.e. remove user from project
+    """
+    permission_classes = [IsOwnerOrReadOnlyMember]
+    queryset = Member.objects.all()
+    serializer_class = MemberSerializer

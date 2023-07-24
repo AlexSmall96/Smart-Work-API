@@ -19,3 +19,7 @@ class Member(models.Model):
     def __str__(self):
         return f'{self.profile.name} {self.project}'
 
+    class Meta:
+        ordering = ['-created_at']
+        unique_together = ['profile', 'project']
+

@@ -21,5 +21,5 @@ class Member(models.Model):
 
     class Meta:
         ordering = ['-created_at']
-        # unique_together = ['profile', 'project']
+        unique_together = ['profile', 'project']
 

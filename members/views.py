@@ -24,7 +24,8 @@ class MemberList(generics.ListCreateAPIView):
     ]
 
     filterset_fields = [
-        'profile'
+        'profile',
+        'project'
     ]
 
     def create_member(sender, instance, created, **kwargs):

@@ -20,7 +20,7 @@ class MemberSerializer(serializers.ModelSerializer):
     complexity = serializers.ReadOnlyField(source='project.complexity')
 
     class Meta:
-        model = Member
+        model = Member  
         fields = '__all__'
 
     def create(self, validated_data):

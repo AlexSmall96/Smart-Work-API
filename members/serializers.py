@@ -9,6 +9,7 @@ class MemberSerializer(serializers.ModelSerializer):
     """
     member_name = serializers.ReadOnlyField(source='profile.name')
     member_username = serializers.ReadOnlyField(source='profile.owner.username')
+    member_image = serializers.ImageField(source='profile.image', read_only=True)
     title = serializers.ReadOnlyField(source='project.title')
     description = serializers.ReadOnlyField(source='project.description')
     start_date = serializers.ReadOnlyField(source='project.start_date')

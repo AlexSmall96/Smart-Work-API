@@ -1,4 +1,4 @@
-from rest_framework import generics
+from rest_framework import generics, filters
 from smart_work_api.permissions import IsOwnerOrReadOnly
 from .models import Profile
 from .serializers import ProfileSerializer
@@ -11,6 +11,17 @@ class ProfileList(generics.ListAPIView):
     """
     queryset = Profile.objects.all()
     serializer_class = ProfileSerializer
+
+    filter_backends = [
+        filters.OrderingFilter,
+        filters.SearchFilter,
+    ]
+    search_fields = [
+        'owner__username',
+        'name',
+        'organisation',
+        'role'
+    ]
 
 
 class ProfileDetail(generics.RetrieveUpdateAPIView):

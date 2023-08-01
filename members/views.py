@@ -28,21 +28,14 @@ class MemberList(generics.ListCreateAPIView):
         'project'
     ]
 
-    # def create_member(sender, instance, created, **kwargs):
-    #     project = get_object_or_404(Project, pk=instance.id)
-    #     profile = get_object_or_404(Profile, pk=instance.owner.id)
-    #     if len(Member.objects.filter(profile=profile, project=project)) == 0:
-    #         member = Member.objects.create(project=project, profile=profile)
-    #         member.save()
+    def create_member(sender, instance, created, **kwargs):
+        project = get_object_or_404(Project, pk=instance.id)
+        profile = get_object_or_404(Profile, pk=instance.owner.id)
+        if len(Member.objects.filter(profile=profile, project=project)) == 0:
+            member = Member.objects.create(project=project, profile=profile)
+            member.save()
     
-    # def delete_member(sender, instance, created, **kwargs):
-    #     project = get_object_or_404(Project, pk=instance.id)
-    #     profile = get_object_or_404(Profile, pk=instance.owner.id)
-    #     member = Member.objects.get(project=project, profile=profile)
-    #     member.delete()
-        
-    # post_save.connect(receiver=create_member, sender=Project)
-    # pre_delete.connect(receiver=delete_member, sender=Project)
+    post_save.connect(receiver=create_member, sender=Project)
 
 
 class MemberDetail(generics.RetrieveDestroyAPIView):

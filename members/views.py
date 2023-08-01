@@ -31,8 +31,9 @@ class MemberList(generics.ListCreateAPIView):
     def create_member(sender, instance, created, **kwargs):
         project = get_object_or_404(Project, pk=instance.id)
         profile = get_object_or_404(Profile, pk=instance.owner.id)
-        member = Member.objects.create(project=project, profile=profile)
-        member.save()
+        if len(Member.objects.filter(profile=profile, project=project)) == 0:
+            member = Member.objects.create(project=project, profile=profile)
+            member.save()
         
     post_save.connect(receiver=create_member, sender=Project)
 

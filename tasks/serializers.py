@@ -9,6 +9,7 @@ class TaskSerializer(serializers.ModelSerializer):
     project_title = serializers.ReadOnlyField(source='assigned_to.project.title')
     profile_image = serializers.ReadOnlyField(source='owner.profile.image.url')
     assigned_to_username = serializers.ReadOnlyField(source='assigned_to.profile.owner.username')
+    assigned_to_profile_id = serializers.ReadOnlyField(source='assigned_to.profile.id')
     assigned_to_image = serializers.ImageField(source='assigned_to.profile.image', read_only=True)
    
     class Meta:

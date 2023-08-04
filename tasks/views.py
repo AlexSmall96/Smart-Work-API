@@ -1,8 +1,8 @@
-from rest_framework import generics, permissions
+from rest_framework import generics, permissions, filters
 from smart_work_api.permissions import IsOwnerOrReadOnly
 from .models import Task
 from .serializers import TaskSerializer
-
+from django_filters.rest_framework import DjangoFilterBackend
 
 # Need to add permissions where a user can only create a task
 # if they are a member of the corresponding project
@@ -13,6 +13,17 @@ class TaskList(generics.ListCreateAPIView):
     serializer_class = TaskSerializer
     permission_classes = [permissions.IsAuthenticatedOrReadOnly]
     queryset = Task.objects.all()
+
+    filter_backends = [
+        filters.OrderingFilter,
+        filters.SearchFilter,
+        DjangoFilterBackend,
+    ]
+
+    filterset_fields = [
+        'assigned_to',
+        'assigned_to__project'
+    ]
 
 
 class TaskDetail(generics.RetrieveUpdateDestroyAPIView):

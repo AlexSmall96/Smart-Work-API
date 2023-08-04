@@ -1,5 +1,5 @@
 from rest_framework import generics, permissions, filters
-from smart_work_api.permissions import IsOwnerOrReadOnly
+from smart_work_api.permissions import IsOwnerOrReadOnlyTask
 from .models import Task
 from .serializers import TaskSerializer
 from django_filters.rest_framework import DjangoFilterBackend
@@ -30,6 +30,6 @@ class TaskDetail(generics.RetrieveUpdateDestroyAPIView):
     """
     Retrieve a task, or update or delete it by id if you own it.
     """
-    permission_classes = [IsOwnerOrReadOnly]
+    permission_classes = [IsOwnerOrReadOnlyTask]
     serializer_class = TaskSerializer
     queryset = Task.objects.all()

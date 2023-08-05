@@ -22,7 +22,8 @@ class TaskList(generics.ListCreateAPIView):
 
     filterset_fields = [
         'assigned_to',
-        'assigned_to__project'
+        'assigned_to__project',
+        'assigned_to__profile',
     ]
 
 

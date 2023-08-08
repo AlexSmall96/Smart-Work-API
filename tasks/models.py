@@ -13,7 +13,7 @@ class Task(models.Model):
     # Add validation for start_date and due_date
     start_date = models.DateTimeField()
     due_date = models.DateTimeField()
-    description = models.TextField(blank=True)
+    description = models.TextField(null=False, blank=False)
     status = models.CharField(
         max_length=11,
         choices=(

@@ -6,6 +6,8 @@ from profiles.models import Profile
 
 class Member(models.Model):
     """
+    Creates an instance of a user assigned to a project
+    uses profile and project data.
     """
     profile = models.ForeignKey(
         Profile, on_delete=models.CASCADE

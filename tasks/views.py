@@ -4,8 +4,7 @@ from .models import Task
 from .serializers import TaskSerializer
 from django_filters.rest_framework import DjangoFilterBackend
 
-# Need to add permissions where a user can only create a task
-# if they are a member of the corresponding project
+
 class TaskList(generics.ListCreateAPIView):
     """
     List tasks or create a task if logged in.

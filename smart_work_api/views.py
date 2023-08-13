@@ -5,11 +5,14 @@ from .settings import (
     JWT_AUTH_SECURE,
 )
 
+
+# Welcome View when API first loads
 @api_view()
 def root_route(request):
     return Response({
         "message": "Welcome to the Smart Work API!"
     })
+
 
 # dj-rest-auth logout view fix
 @api_view(['POST'])

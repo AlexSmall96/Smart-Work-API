@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.db.models.signals import post_save
 
+
 class Project(models.Model):
     """
     Project model, related to 'owner', i.e. a User instance.
@@ -12,7 +13,7 @@ class Project(models.Model):
     title = models.CharField(max_length=255)
     description = models.TextField(blank=True)
     complexity = models.CharField(
-        max_length=7, 
+        max_length=7,
         choices=(
             ('Low', 'LOW'),
             ('Medium', 'MEDIUM'),
@@ -20,7 +21,6 @@ class Project(models.Model):
         ),
         default='Low'
     )
-
 
     class Meta:
         ordering = ['due_date']

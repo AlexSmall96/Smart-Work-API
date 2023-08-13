@@ -24,6 +24,37 @@ Manual testing was carried out and documented in the below pdf. For each of the 
 All .py files pass through the [Code Institute Python Linter](https://pep8ci.herokuapp.com/) with no issues.
 ## Deployment
 ### Deploying the Site to Heroku
+1. First create a database instance on https://www.elephantsql.com/
+    - Navigate to ElephantSQL.com and click “Get a managed database today”
+    - Select “Try now for FREE” in the TINY TURTLE database plan
+    - Select “Log in with GitHub” and authorize ElephantSQL with your selected GitHub account
+    - In the Create new team form:
+        - Add a team name (your own name is fine)
+        - Read and agree to the Terms of Service
+        - Select Yes for GDPR
+        - Provide your email address
+        - Click “Create Team”`
+    - Once logged in, click 'Create New Instance'
+    - Select a plan and name (this is usually the name of the project)
+    - Click select region and select the region closest to you
+    - Click review and create instance
+    - Once created, go to the dashboard, click on the database name and copy the URL
+2. Create an account on [https://cloudinary.com/](Cloudinary) and copy the CLOUNDARY_URL from the dashboard
+3. On Heroku.com, click Create New App, and create using any name
+4. Go to the settings tab, click reveal config vars and add the following key, value pairs:
+    - CLIENT_ORIGIN: this is the url of the deployed front end site
+    - CLOUINARY_URL: the URL copied from cloudinary
+    - DATABASE_URL: the database copied from Elephant SQL
+    - DISABLE_COLLECTSTATIC: set to 1
+    - SECRET_KEY: any value will do
+5. Open a new workspace from this repository and install any necessary packages from the requirements.txt file
+6. Create an env.py file and add the lines (if committing to GitHub ensure env.py is in the .gitignore file)
+    - import os 
+    - os.environ['DATABASE_URL'] = 'your_database_url'
+7. Enter the commmand 'python manage.py migrate'. This will migrate the database structure into your newly created database.
+8. Go back to Heroku and click deploy. Copy the URL of the deployed site
+9. Go back to the Heroku app add a final config var of : ALLOWED_HOST with value being the URL you just copied
+10. Click open app to view the API.
 
 ### Forking the Repository on GitHub
 1. On GitHub.com, navigate to the main page of the repository.

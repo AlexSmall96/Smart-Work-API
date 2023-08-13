@@ -10,18 +10,16 @@ Smart Work is a project manager app built using the Javascript React framework. 
 #### Front End Repository
 [https://github.com/AlexSmall96/Smart-Work](https://github.com/AlexSmall96/Smart-Work)
 
-## Project Goals and Planning
-
-### User Stories
-
 ### Database Schema
+The below diagram was used to plan the database schema.
+
 ![Database Schema](documentation/images/Smart-Work-db-schema.png) 
 
 ## Testing
 ### Manual Testing
 Manual testing was carried out and documented in the below pdf. For each of the sites models, the list and detail views were tested along with any filtering methods. In the below document, 'Base URL' refers to the main URL of the site.
 
-![Testing](documentation/testing/apiTesting.pdf) 
+[Testing](documentation/testing/apiTesting.pdf) 
 ### Validation Testing 
 All .py files pass through the [Code Institute Python Linter](https://pep8ci.herokuapp.com/) with no issues.
 ## Deployment
@@ -45,6 +43,8 @@ All .py files pass through the [Code Institute Python Linter](https://pep8ci.her
 7. Press Enter to create your local clone.
 ## Credits
 ### Content
+The site was built with inspiration from the Code Institute Moments and Django Rest Framework walkthrough projects. Several models have been created with the walkthrough projects as source material, however, custom code was required to deal with deviations in the site functionality and database schema.
+### Other programmes used
 - [https://dbdiagram.io/home](https://dbdiagram.io/home) was used to create the database schema diagram.
 ## Acknowledgements 
 This application was created as a portfolio 5 project for the Diploma in Full Stack Software Development from [Code Institute](https://codeinstitute.net/full-stack-software-development-diploma/?utm_term=code%20institute&utm_campaign=CI+-+UK+-+Search+-+Brand&utm_source=adwords&utm_medium=ppc&hsa_acc=8983321581&hsa_cam=1578649861&hsa_grp=62188641240&hsa_ad=635720257674&hsa_src=g&hsa_tgt=kwd-319867646331&hsa_kw=code%20institute&hsa_mt=e&hsa_net=adwords&hsa_ver=3&gclid=CjwKCAiA5Y6eBhAbEiwA_2ZWIUE0LRewvfAYnQS69Lujb5s2FrQjmX0Idzqj-Olbamn1DbS2D-R7gBoC-1AQAvD_BwE

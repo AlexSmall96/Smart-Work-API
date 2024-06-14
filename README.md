@@ -2,9 +2,10 @@
 Smart Work is a project manager app built using the Javascript React framework. The app uses an API created with the Django-Rest Framework to load, create, edit, and delete data. The purpose of the site is to collaborate on projects with colleagues or friends, where users can add, update and delete tasks from projects, as well as view users' profiles and customize their own. The app is split into two separate sites. This repository is the back-end API section of the app.
 
 ## Live Site
-[https://smart-work-api-c3503744e915.herokuapp.com/](https://smart-work-api-c3503744e915.herokuapp.com)
+[https://smart-work-api.onrender.com/](https://smart-work-api.onrender.com/)
 #### Front End Site
 [https://smart-work-3d4938feb378.herokuapp.com/](https://smart-work-3d4938feb378.herokuapp.com/)
+[https://smart-work.onrender.com/](https://smart-work.onrender.com/)
 ## Repository
 [https://github.com/AlexSmall96/Smart-Work-API](https://github.com/AlexSmall96/Smart-Work-API)
 #### Front End Repository

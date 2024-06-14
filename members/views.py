@@ -6,8 +6,7 @@ from django_filters.rest_framework import DjangoFilterBackend
 from django.db.models.signals import post_save, pre_delete
 from django.shortcuts import get_object_or_404
 from rest_framework import generics, permissions, filters
-from smart_work_api.permissions import
-IsOwnerOrReadOnly, IsOwnerOrReadOnlyMember
+from smart_work_api.permissions import IsOwnerOrReadOnly, IsOwnerOrReadOnlyMember
 
 
 class MemberList(generics.ListCreateAPIView):
